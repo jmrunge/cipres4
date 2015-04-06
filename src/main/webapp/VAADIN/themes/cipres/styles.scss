@@ -1,0 +1,11 @@
+@import "addons.scss";
+@import "cipres.scss";
+
+/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
+/* The actual styles should be defined in cipres.scss */
+.cipres {
+  @include addons;
+
+  // Include cipres theme styles in your theme
+  @include cipres;
+}

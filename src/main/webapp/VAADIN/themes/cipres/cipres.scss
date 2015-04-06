@@ -1,0 +1,217 @@
+@import "../valo/valo";
+
+@mixin cipres {
+    @include valo;
+
+    .root {
+            background-image: url(background.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+    }
+
+    .v-dock {
+            position: fixed;
+            display: block;
+            z-index: 999;
+    }
+
+    .dock_bottom, .dock_middle {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            margin-left: -250px;
+    }
+
+    .dock_left, .dock_center {
+            position: fixed;
+            top: 50%;
+            bottom: 50%;
+            margin-top: -250px;
+    }
+
+    .dock_top {
+            position: fixed;
+            left: 50%;
+            right: 50%;
+            margin-left: -250px;
+    }
+
+    .dock_right {
+            position: fixed;
+            top: 50%;
+            bottom: 50%;
+            margin-top: -250px;
+    }
+
+    .settings {
+            width: 500px !important;
+            border-radius: 20px;
+            border: 3px solid lightgrey;
+            margin: 0 auto;
+            display: block;
+            margin-top: 100px;
+    }
+
+    .root {
+            background-color: darkblue;
+    }
+
+    .v-dock .jqDockItem .jqDockLabel {
+            background-color: lightgray;
+            color: black;
+            padding: 2px;
+            font-weight: bold;
+            border: 1px solid white;
+            border-radius: 4px;
+    }
+
+    .root .settings .v-label {
+            font-size: 20px;
+            font-weight: bold;
+            height: 25px;
+    }
+
+    .v-link {
+            position: fixed;
+            right: 10px;
+            bottom: 0;
+    }
+
+    .v-slot-cipres-header {
+        box-sizing: border-box;
+        border-bottom: lightsteelblue solid 1px;
+        background: url(cipres-header.png);
+        background-repeat: no-repeat;
+        background-position: center center; 
+    }
+
+    .v-slot-cipres-main {
+        background: url(cipres-background.png);
+        background-repeat: no-repeat;
+        background-position: right bottom; 
+    }
+
+    .hideme {
+        width: 120% !important;
+        height: 50px !important;
+        left: 0px !important;
+        z-index: 5;
+    }
+
+    .hideme .v-dock {
+        bottom: -50px !important;
+        transition: all 1.0s ease-in-out;
+        -webkit-transition: all 1.0s ease-in-out;
+        -moz-transition: all 1.0s ease-in-out;
+        -o-transition: all 1.0s ease-in-out;
+        z-index: 10;
+    }
+
+    .hideme:hover .v-dock {
+        bottom: 0px !important;
+    }
+
+    .v-Notification.info {
+        background: #FFFF7F;
+        color: black;
+    }
+
+    .v-label-login {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #349aff;
+    }
+
+    .v-label-locking {
+        width: 100%;
+        height: 70px;
+        border: 3px #da0101 solid;
+        background-color: #f82a2a;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .menu {
+        padding-top: 0px !important;
+    }
+
+    .transparent {
+        background: transparent;
+    }
+
+    .v-table-cell-content {
+        vertical-align: middle;
+    }
+
+    input.v-textfield-visible {
+        border: 1px solid #b6b6b6;
+        border-top-color: #9d9d9d;
+        border-bottom-color: #d6d6d6;
+        border-right-color: #d6d6d6;
+        color: #000000;
+        opacity: 1.0;
+        filter: none;
+        background: #F1EEEE;
+    }
+    
+    .v-panel-content-visible {
+        background: #F1EEEE;
+    }
+    
+    .v-tabsheet-tabitem .v-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .v-panel-caption-plain {
+        font-weight: 100;
+    }
+    
+    /* Valo theme styling */
+    .cipres .filters-panel {
+            background-color: #EFEFEF;
+            height: 37px;
+    }
+    .v-app.cipres .v-table .filters-panel input.v-textfield.v-widget {
+            height: 37px;	
+    }
+
+    .cipres .datefilterpopup .v-popupbutton,
+    .cipres .datefilterpopup .v-popupbutton:focus,
+    .cipres .datefilterpopup .v-popupbutton:active,
+    .cipres .datefilterpopup .v-popupbutton.v-pressed {
+            height: 37px;
+            border-radius: 0;
+    }
+
+    .cipres .numberfilterpopup .v-popupbutton,
+    .cipres .numberfilterpopup .v-popupbutton:focus,
+    .cipres .numberfilterpopup .v-popupbutton:active,
+    .cipres .numberfilterpopup .v-popupbutton.v-pressed {
+            height: 37px;
+            border-radius: 0;
+    }
+
+    .cipres .numberfilterpopup .v-popup-indicator,
+    .cipres .datefilterpopup .v-popup-indicator {
+            margin-top: 7px;
+    }
+
+    .cipres .numberfilterpopup .v-button-caption,
+    .cipres .datefilterpopup .v-button-caption {
+            font-size: 16px;
+    }
+
+    .cipres .filters-panel .v-checkbox {
+            margin-top: 9px;
+            margin-left: 14px;
+    }
+
+    .cipres .filters-panel .v-filterselect.v-widget {
+            border-radius: 0;
+    }
+}

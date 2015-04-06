@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+  id="WebApp_ID" version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <servlet>
+        <servlet-name>skorpioServlet</servlet-name>
+        <servlet-class>ar.com.zir.skorpio.core.session.SkorpioServlet</servlet-class>
+
+        <init-param>
+            <param-name>UI</param-name>
+            <param-value>ar.com.zir.cipres.CipresUI</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>closeIdleSessions</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        
+        <init-param>
+            <param-name>pushmode</param-name>
+            <param-value>automatic</param-value>
+        </init-param>
+  
+        <async-supported>true</async-supported>
+
+        <init-param>
+            <param-name>widgetset</param-name>
+            <param-value>ar.com.zir.cipres.AppWidgetSet</param-value>
+        </init-param>
+        
+        <!-- Define an UIProvider-->
+        <init-param>
+            <param-name>UIProvider</param-name>
+            <param-value>com.vaadin.cdi.CDIUIProvider</param-value>
+        </init-param>
+        
+        <load-on-startup>1</load-on-startup>
+        
+        <!--init-param>
+            <param-name>org.atmosphere.useWebSocketAndServlet3</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.atmosphere.cpr.asyncSupport</param-name>
+            <param-value>org.atmosphere.container.Servlet30CometSupport</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.atmosphere.cpr.sessionSupport</param-name>
+            <param-value>true</param-value>
+        </init-param-->
+ 
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>skorpioServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    
+    <context-param>
+        <param-name>productionMode</param-name>
+        <param-value>false</param-value>
+        <description>Vaadin production mode</description>
+    </context-param>
+    
+    <context-param>
+        <param-name>heartbeatInterval</param-name>
+        <param-value>30</param-value>
+    </context-param>
+    
+    <!-- Disable cross site protection
+    <context-param>
+        <param-name>disable-xsrf-protection</param-name>
+        <param-value>true</param-value>
+    </context-param-->
+
+    <session-config>
+        <session-timeout>1440</session-timeout>
+    </session-config>
+    
+    <listener>
+        <listener-class>ar.com.zir.skorpio.core.session.HttpListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.atmosphere.cpr.SessionSupport</listener-class>
+    </listener>
+    
+    <context-param>
+        <param-name>org.atmosphere.cpr.sessionSupport</param-name>
+        <param-value>true</param-value>
+    </context-param>
+</web-app>
